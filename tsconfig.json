@@ -6,6 +6,5 @@
 		"module": "commonjs",
 		"target": "ES5",
 		"allowJs": true
-	},
-	"include": [ "src/**/*" ]
+	}
 }
