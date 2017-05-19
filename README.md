@@ -4,10 +4,12 @@
 
 ## Building
 
-    yarn link
+    make
+
+## Running
+
+    ./bin/itemize
 
 ## Removal
 
-    yarn unlink
-
-
+    make clean

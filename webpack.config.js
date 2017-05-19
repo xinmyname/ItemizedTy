@@ -1,7 +1,7 @@
 module.exports = {
 	entry: './src/main.ts',
 	output: {
-		filename: 'itemize.js',
+		filename: 'itemize',
 		path: __dirname + '/bin'
 	},
 	module: {
