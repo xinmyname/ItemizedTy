@@ -1,0 +1,11 @@
+{
+  "name": "itemize",
+  "version": "1.0.0",
+  "description": "Polyglotism!",
+  "repository": "https://github.com/xinmyname/ItemizedTy.git",
+  "author": "Andy Sherwood <xinmyname@gmail.com>",
+  "license": "MIT",
+  "bin": {
+  	"itemize": "bin/itemize.js"
+  }
+}
