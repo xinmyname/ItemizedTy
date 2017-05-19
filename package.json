@@ -9,8 +9,10 @@
     "itemize": "bin/itemize.js"
   },
   "devDependencies": {
-    "ts-loader": "^2.0.3",
-    "typescript": "^2.3.2",
-    "webpack": "^2.5.1"
+    "@types/node": "^7.0.18",
+    "typescript": "^2.3.2"
+  },
+  "dependencies": {
+    "commander": "^2.9.0"
   }
 }
