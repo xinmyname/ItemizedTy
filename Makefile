@@ -1,4 +1,5 @@
 itemize:
+	yarn
 	./node_modules/.bin/tsc
 
 run:

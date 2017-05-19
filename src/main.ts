@@ -6,7 +6,7 @@ import Inventory from "./Models/Inventory.js"
 
 app.version('0.0.1')
     .arguments('<count>')
-    .action(function(count) {
+    .action(count => {
 
         const inventory = new Inventory();
         const itemFactory = new ItemFactory();

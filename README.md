@@ -8,7 +8,7 @@
 
 ## Running
 
-    ./bin/itemize
+    node ./bin/main.js <count>
 
 ## Removal
 
