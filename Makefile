@@ -3,7 +3,7 @@ itemize:
 	./node_modules/.bin/tsc
 
 run:
-	node ./bin/main.js
+	node ./bin/itemize.js
 
 clean:
 	rm -rf ./bin
