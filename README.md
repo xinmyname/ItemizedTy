@@ -16,7 +16,7 @@ Yes, it's very simple. That's the idea.
     You have: 
     42 items
 
-# Prerequisites
+## Prerequisites
 - node 7.10.0
 - yarn 0.24.5
 
