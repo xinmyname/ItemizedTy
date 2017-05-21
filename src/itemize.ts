@@ -16,7 +16,6 @@ app.version('0.0.1')
         }
         
         console.log("You have:");
-        console.log("");
 
         for (let slot of inventory.slots) {
             console.log(`  ${slot}`);
