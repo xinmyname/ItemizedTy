@@ -1,6 +1,6 @@
-import Descriptor from "./Descriptor.js"
-import Item from "./Item.js"
-import Slot from "./Slot.js"
+import Descriptor from "./Descriptor"
+import Item from "./Item"
+import Slot from "./Slot"
 
 export default class Inventory {
 

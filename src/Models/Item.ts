@@ -1,4 +1,4 @@
-import Descriptor from "./Descriptor.js"
+import Descriptor from "./Descriptor"
 
 export default class Item {
 

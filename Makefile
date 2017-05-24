@@ -1,9 +1,9 @@
 itemize:
 	yarn
-	./node_modules/.bin/tsc
+	./node_modules/.bin/webpack
 
 run:
-	node ./bin/main.js
+	node ./bin/itemize.js
 
 clean:
 	rm -rf ./bin

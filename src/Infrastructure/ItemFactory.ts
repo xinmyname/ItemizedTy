@@ -1,4 +1,4 @@
-import Item from "../Models/Item.js"
+import Item from "../Models/Item"
 
 export default class ItemFactory {
 

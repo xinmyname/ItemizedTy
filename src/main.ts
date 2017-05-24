@@ -1,8 +1,8 @@
 import app = require("commander")
-import Item from "./Models/Item.js"
-import Slot from "./Models/Slot.js"
-import ItemFactory from "./Infrastructure/ItemFactory.js"
-import Inventory from "./Models/Inventory.js"
+import Item from "./Models/Item"
+import Slot from "./Models/Slot"
+import ItemFactory from "./Infrastructure/ItemFactory"
+import Inventory from "./Models/Inventory"
 
 app.version('0.0.1')
     .arguments('<count>')
