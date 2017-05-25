@@ -26,12 +26,5 @@ module.exports = {
         { test: /.ts$/, loader: 'awesome-typescript-loader' }
     ]
   },
-  externals: nodeModules,
-  plugins: [
-    new webpack.BannerPlugin({ 
-        banner: 'require("source-map-support").install();', 
-        raw: true, 
-        entryOnly: false 
-    })],
-  devtool: 'sourcemap'
+  externals: nodeModules
 }
