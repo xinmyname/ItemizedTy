@@ -1,12 +1,24 @@
-itemize:
-	yarn
-	./node_modules/.bin/webpack -p --config webpack.config.prod.js
-	echo "#!/usr/bin/env node" > ./bin/itemize
-	echo "require('./itemize.js')" >> ./bin/itemize
-	chmod +x ./bin/itemize
+NAME=itemize
+OUTPUTDIR=./bin
+TARGET=$(OUTPUTDIR)/$(NAME)
+WEBPACK=./node_modules/.bin/webpack
+WEBPACKFLAGS=
 
-run:
-	node ./bin/itemize.js
+.PHONY: debug
+debug: WEBPACKFLAGS+=--debug --env.production=false
+debug: all
+
+.PHONY: release
+release: WEBPACKFLAGS+=-p --env.production=true
+release: all
+
+all:
+	rm -rf $(OUTPUTDIR)
+	$(WEBPACK) $(WEBPACKFLAGS)
+	yarn
+	echo "#!/usr/bin/env node" > $(TARGET)
+	echo "require('./$(NAME).js')" >> $(TARGET)
+	chmod +x $(TARGET)
 
 clean:
-	rm -rf ./bin
+	rm -rf $(OUTPUTDIR)
