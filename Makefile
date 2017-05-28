@@ -14,8 +14,8 @@ release: all
 
 all:
 	rm -rf $(OUTPUTDIR)
-	$(WEBPACK) $(WEBPACKFLAGS)
 	yarn
+	$(WEBPACK) $(WEBPACKFLAGS)
 	echo "#!/usr/bin/env node" > $(TARGET)
 	echo "require('./$(NAME).js')" >> $(TARGET)
 	chmod +x $(TARGET)
