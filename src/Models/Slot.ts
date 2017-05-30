@@ -1,4 +1,5 @@
 import Item from "./Item"
+import Pluralizer from "../Infrastructure/Pluralizer"
 
 export default class Slot {
 
@@ -26,9 +27,7 @@ export default class Slot {
 
         let quantityText = ""
 
-        let text = this._quantity === 1
-            ? `${this._item}` 
-            : `${this._item}s`;
+        let text = Pluralizer.default.pluralOf(`${this._item}`, this._quantity);
 
         switch (this._quantity) {
 
