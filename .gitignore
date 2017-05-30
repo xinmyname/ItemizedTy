@@ -58,4 +58,7 @@ typings/
 .env
 
 bin
-.vscode
+
+# I'm committing my .vscode folder because it has a debug launch config for 
+# ts-node that was pretty tricky to figure out.
+# .vscode

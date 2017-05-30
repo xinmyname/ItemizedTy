@@ -94,17 +94,20 @@ export default class Pluralizer {
 
     public pluralOf(word: string = "", count:number = 2): string {
 
-        if (count == 1 || word.length == 0 || Pluralizer._instance._uncountables.indexOf(word) == -1)
+        if (count == 1 || word.length == 0 || Pluralizer._instance._uncountables.indexOf(word) != -1)
             return word;
 
-        Pluralizer._instance._rules.forEach(pair => {
+        for (var i = 0; i < Pluralizer._instance._rules.length; i++) {
+            
+            let pair = Pluralizer._instance._rules[i];
             let rule = pair[0];
             let template = pair[1];
             let re = RegExp(rule);
             let newValue = word.replace(re, template);
+
             if (newValue !== word)
                 return newValue;
-        });
+        }
 
         return word;
     }
