@@ -28,6 +28,10 @@ Yes, it's very simple. That's the idea.
 
     ./bin/itemize <count>
 
+## Running with ts-node (unpacked)
+
+    ./node_modules/.bin/ts-node src/main.ts 42    
+
 ## Removal
 
     make clean
