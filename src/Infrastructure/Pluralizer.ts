@@ -62,7 +62,7 @@ export default class Pluralizer {
         ["(t)ooth$", "$1eeth"],
         ["lf$", "lves"],
         ["(f)oot$", "$1eet"],
-        ["^(|wo|work|fire)man$", "$1men"],
+        ["^(wo|work|fire)man$", "$1men"],
         ["(potat|tomat|volcan)o$", "$1oes"],
         ["(criteri|phenomen)on$", "$1a"],
         ["(nebul)a", "$1ae"],
@@ -81,7 +81,7 @@ export default class Pluralizer {
         ["(ax)is", "$1es"],
         ["(sh|zz|ss)$", "$1es"],
         ["x$", "xes"],
-        ["(t|r|l|b)y$", "$1ies"],
+        ["(t|sp|r|l|b)y$", "$1ies"],
         ["s$", "ses"],
         ["$", "s"]
     ];
