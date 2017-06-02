@@ -94,12 +94,13 @@ export default class Pluralizer {
 
     public pluralOf(word: string = "", count:number = 2): string {
 
-        if (count == 1 || word.length == 0 || Pluralizer._instance._uncountables.indexOf(word) != -1)
+
+        if (count == 1 || word.length == 0 || this.sortedArrayContains(this._uncountables, word))
             return word;
 
-        for (var i = 0; i < Pluralizer._instance._rules.length; i++) {
+        for (var i = 0; i < this._rules.length; i++) {
             
-            let pair = Pluralizer._instance._rules[i];
+            let pair = this._rules[i];
             let rule = pair[0];
             let template = pair[1];
             let re = RegExp(rule);
@@ -110,5 +111,26 @@ export default class Pluralizer {
         }
 
         return word;
+    }
+
+    private sortedArrayContains(array:string[], item:string): Boolean {
+
+        let first = 0;
+        let last = array.length-1;
+
+        while (first <= last) {
+            let mid = Math.floor((first + last) / 2);
+
+            if (array[mid] == item)
+                return true;
+
+            if (item < array[mid]) {
+                last = mid - 1;
+            } else {
+                first = mid + 1;
+            }
+        }
+
+        return false;
     }
 }
