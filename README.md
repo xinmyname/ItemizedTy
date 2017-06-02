@@ -38,3 +38,13 @@ Yes, it's very simple. That's the idea.
 
 ## Notes
 This was a LOT of trouble to setup and it's probably not idiomatic. I'm honestly surprised it works, but it does compile and bundle the app to a single .js file, with a .map, which is great.
+
+## The Good Parts
+- Garbage collected
+- Tuples are just arrays
+
+## Airing of Grievances
+- Feature poor runtime library
+- Build your own build system
+- WET (write everything twice) module syntax 
+- Tuples are just arrays

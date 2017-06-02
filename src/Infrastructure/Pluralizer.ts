@@ -100,9 +100,7 @@ export default class Pluralizer {
 
         for (var i = 0; i < this._rules.length; i++) {
             
-            let pair = this._rules[i];
-            let rule = pair[0];
-            let template = pair[1];
+            let [rule,template] = this._rules[i];
             let re = RegExp(rule);
             let newValue = word.replace(re, template);
 
