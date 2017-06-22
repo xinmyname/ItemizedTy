@@ -3,6 +3,8 @@ OUTPUTDIR=./bin
 TARGET=$(OUTPUTDIR)/$(NAME)
 WEBPACK=./node_modules/.bin/webpack
 WEBPACKFLAGS=
+MOCHA=./node_modules/.bin/mocha
+TESTDIR=./tests
 
 .PHONY: debug
 debug: WEBPACKFLAGS+=--debug --env.production=false
@@ -19,6 +21,9 @@ all:
 	echo "#!/usr/bin/env node" > $(TARGET)
 	echo "require('./$(NAME).js')" >> $(TARGET)
 	chmod +x $(TARGET)
+
+test:
+	$(MOCHA) $(TESTDIR)/*.ts --require ./node_modules/ts-node/register.js
 
 clean:
 	rm -rf $(OUTPUTDIR)

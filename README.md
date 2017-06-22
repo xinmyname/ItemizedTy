@@ -32,6 +32,9 @@ Yes, it's very simple. That's the idea.
 
     ./node_modules/.bin/ts-node src/main.ts 42    
 
+## Testing
+    make test
+
 ## Removal
 
     make clean
