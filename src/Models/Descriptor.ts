@@ -1,16 +1,23 @@
 export default class Descriptor {
 
-    private static _instance:Descriptor = new Descriptor();
+    private _contents:number[] = []
 
-    private constructor() {
-    }
+    public constructor(obj?:any) {
 
-    public static get default() : Descriptor {
-        return Descriptor._instance || (Descriptor._instance = new Descriptor());
+        if (obj instanceof Array) {
+            this._contents = (obj as number[]);
+        } else if (typeof obj === 'string') {
+            this._contents = (obj as string).split("-").map(x => x === '?' ? -1 : Number(x));
+            let strIndex = obj as string;
+        }
     }
 
     toString() : string {
-        return "DESCRIPTOR";
+        return this._contents.map(x => x < 0 ? "?" : String(x)).join("-");
+    }
+
+    append(index:number|null) {
+        this._contents.push(index === null ? -1 : index);
     }
 
 }

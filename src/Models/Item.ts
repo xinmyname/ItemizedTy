@@ -5,7 +5,7 @@ export default class Item {
     private _descriptor:Descriptor
 
     constructor() {
-        this._descriptor = Descriptor.default;
+        this._descriptor = new Descriptor();
     }
 
     get descriptor() : Descriptor {

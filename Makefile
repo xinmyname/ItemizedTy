@@ -14,6 +14,9 @@ debug: all
 release: WEBPACKFLAGS+=-p --env.production=true
 release: all
 
+.PHONY: build
+build: debug
+
 all:
 	rm -rf $(OUTPUTDIR)
 	yarn
