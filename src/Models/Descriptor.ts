@@ -16,8 +16,21 @@ export default class Descriptor {
         return this._contents.map(x => x < 0 ? "?" : String(x)).join("-");
     }
 
+    iterator() : DescriptorIterator {
+        return new DescriptorIterator(this);
+    }
+
     append(index:number|null) {
         this._contents.push(index === null ? -1 : index);
     }
 
+}
+
+class DescriptorIterator {
+
+    private _descriptor:Descriptor;
+
+    public constructor(descriptor:Descriptor) {
+        this._descriptor = descriptor;
+    }
 }
