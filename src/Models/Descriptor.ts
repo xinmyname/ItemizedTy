@@ -1,8 +1,8 @@
 export default class Descriptor {
 
-    private _contents:number[] = []
+    private _contents : number[] = []
 
-    public constructor(obj?:any) {
+    public constructor(obj? : any) {
 
         if (obj instanceof Array) {
             this._contents = (obj as number[]);
@@ -20,17 +20,43 @@ export default class Descriptor {
         return new DescriptorIterator(this);
     }
 
-    append(index:number|null) {
+    append(index : number|null) {
         this._contents.push(index === null ? -1 : index);
     }
 
+    at(position : number) : number {
+        let index = this._contents[position];
+
+        if (index < 0)
+            return null;
+
+        return index;
+    }
+
+    get length() : number { 
+        return this._contents.length;
+    }
 }
 
 class DescriptorIterator {
 
-    private _descriptor:Descriptor;
+    private _descriptor : Descriptor;
+    private _position : number = 0;
 
     public constructor(descriptor:Descriptor) {
         this._descriptor = descriptor;
+    }
+
+    public next() : number {
+
+        if (this._position >= this._descriptor.length) {
+            throw "no more items";
+        }
+
+        let index = this._descriptor.at(this._position);
+
+        this._position += 1;
+
+        return index;
     }
 }

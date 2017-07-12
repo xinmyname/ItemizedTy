@@ -112,8 +112,67 @@ describe('To append to an existing Descriptor', () => {
 
 describe('To iterate over an existing Descriptor', () => {
 
-    
+    describe('given a descriptor with indices', () => {
+        it('returns an iterator', () => {
+            var d = new Descriptor("1-?-3");
+            var it = d.iterator();
+            assert.ok(it);
+        });
 
+        describe('when getting the next valid index', () => {
+            it('returns the expected index', () => {
+                var d = new Descriptor("1");
+                var it = d.iterator();
+                assert.equal(it.next(), 1);
+            });
+        });
+
+        describe('when getting multiple valid indices', () => {
+            it('returns the expected index', () => {
+                var d = new Descriptor("4-8-15-16-23-42");
+                var it = d.iterator();
+                assert.equal(it.next(), 4);
+                assert.equal(it.next(), 8);
+                assert.equal(it.next(), 15);
+                assert.equal(it.next(), 16);
+                assert.equal(it.next(), 23);
+                assert.equal(it.next(), 42);
+            });
+        });
+
+        describe('when getting the next null index', () => {
+            it('returns a null index', () => {
+                var d = new Descriptor("?");
+                var it = d.iterator();
+                assert.strictEqual(it.next(), null);
+            });
+        });
+    });
+
+    describe('given a descriptor without indices', () => {
+
+        it('returns an iterator', () => {
+            var d = new Descriptor();
+            var it = d.iterator();
+            assert.ok(it);
+        });
+
+        describe('when getting the next index', () => {
+            it('throws an exception', () => {
+                var d = new Descriptor();
+                var it = d.iterator();
+                assert.throws(() => { it.next(); });
+            });
+        });
+    });
+
+    describe('when the iterator has one null index', () => {
+        it('returns an iterator', () => {
+            var d = new Descriptor("1-?-3");
+            var it = d.iterator();
+            assert.ok(it);
+        });
+    });
 });
 
 
